@@ -45,7 +45,7 @@
                         @csrf
                         <label for="">How do you feel to day {{\Illuminate\Support\Facades\Auth::user()->name}} ???</label>
                         <input type="text" name="title" class="form-control" value="Title" style="background-color: white; color: black">
-                        <textarea name="post" id="" cols="145" placeholder="   Your Status..." rows="5"></textarea>
+                        <textarea name="post" id="" class="form-control" style="background-color: white; color: black" placeholder="   Your Status..." rows="5"></textarea>
                         <input type="number" hidden name="user_id" value="{{\Illuminate\Support\Facades\Auth::user()->id}}">
                         <button type="submit" class="btn btn-success">Share</button>
                     </form>
