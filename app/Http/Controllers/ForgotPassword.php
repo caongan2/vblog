@@ -28,7 +28,7 @@ class ForgotPassword extends Controller
             'type' => 'Success',
             'task' => $user->name,
             'content' => 'Email reset your password',
-            'reset_link' => 'http://127.0.0.1:8000/resetPass?token='.$token
+            'reset_link' => 'http://v-blog-low-bubget.herokuapp.com/public/resetPass?token='.$token
         ];
 
         SendEmail::dispatch($message, $users)->delay(now()->addMinute(1));
