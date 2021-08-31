@@ -24,40 +24,24 @@
             <a href="" class="h1"><b>CốtDim</b>Mon</a>
         </div>
         <div class="card-body">
-            <p class="login-box-msg">Sign in to start your session</p>
+            <p class="login-box-msg">Input your email</p>
             @if(session()->has('login_error'))
                 <p class="text-danger">{{session('login_error')}}</p>
             @endif
-            <form action="{{route('login')}}" method="post">
+            <form action="{{route('sendMail')}}" method="post">
                 @csrf
                 <div class="input-group mb-3">
-                    <input type="text" name="name"  class="form-control" placeholder="Username">
+                    <input type="email" name="email"  class="form-control" placeholder="Email">
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <i class="fas fa-envelope"></i>
                         </div>
                     </div>
                 </div>
-                <div class="input-group mb-3">
-                    <input type="password" name="password" id="password" class="form-control" placeholder="Password">
-                    <div class="input-group-append">
-                        <div class="input-group-text"  id="icon-eye">
-                            <i class="fas fa-eye-slash" id="icon-slash"></i>
-                        </div>
-                    </div>
-                </div>
                 <div class="row">
-                    <div class="col-8">
-                        <div class="icheck-primary">
-                            <input type="checkbox" id="remember">
-                            <label for="remember">
-                                Remember Me
-                            </label>
-                        </div>
-                    </div>
                     <!-- /.col -->
                     <div class="col-4">
-                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                        <button type="submit" class="btn btn-primary btn-block">Accept</button>
                     </div>
                     <!-- /.col -->
                 </div>
@@ -70,9 +54,6 @@
             </div>
             <!-- /.social-auth-links -->
 
-            <p class="mb-1">
-                <a href="{{route('forgot_pass')}}">I forgot my password</a>
-            </p>
             <p class="mb-0">
                 <a href="{{route('formRegister')}}" class="text-center">Register a new membership</a>
             </p>

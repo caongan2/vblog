@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -26,7 +27,7 @@ class UserControllerAPI extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return Product::create($request->all());
     }
 
     /**

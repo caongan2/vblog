@@ -146,4 +146,5 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         return view('customer.yourprofile', compact('user', 'users', 'allPosts'));
     }
+
 }

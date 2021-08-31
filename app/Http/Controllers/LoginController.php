@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRequest;
+use App\Jobs\SendEmail;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -33,6 +34,8 @@ class LoginController extends Controller
         $user->phone = $request->phone;
         $user->address = $request->address;
         $user->save();
+
+
         return redirect()->route('formLogin');
     }
 
@@ -59,7 +62,7 @@ class LoginController extends Controller
         if (Auth::attempt($data)) {
             return redirect()->route('home');
         } else {
-            session()->flash('login_error', 'Account not exits');
+            session()->flash('login_error', 'Tài khoản hoặc mật khẩu không chính xác');
             return redirect()->route('formLogin');
         }
     }

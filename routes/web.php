@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ForgotPassword;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
@@ -22,6 +23,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('customer.login');
 });
+
+Route::get('forgotPass', [ForgotPassword::class, 'showFormForgotPass'])->name('forgot_pass');
+Route::get('resetPass', [ForgotPassword::class, 'formResetPassword'])->name('resetPass');
+Route::post('newPass', [ForgotPassword::class, 'resetPassword'])->name('newPassword');
+Route::post('sendMail', [ForgotPassword::class, 'sendMailReset'])->name('sendMail');
+
 Route::get('/login', [LoginController::class, 'showFormLogin'])->name('formLogin');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::get('/register', [LoginController::class, 'showFormRegister'])->name('formRegister');
