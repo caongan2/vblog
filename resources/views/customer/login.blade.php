@@ -68,7 +68,6 @@
                     <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
                 </a>
             </div>
-            <!-- /.social-auth-links -->
 
             <p class="mb-1">
                 <a href="{{route('forgot_pass')}}">I forgot my password</a>
